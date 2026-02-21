@@ -1,3 +1,15 @@
 ﻿/** @type {import("next").NextConfig} */
-const nextConfig = {};
+const agentId = "AC8_WXwytVVhOpedaxdEH";
+
+const nextConfig = {
+  async rewrites() {
+    return [
+      { source: "/help", destination: `https://chatbase.co/${agentId}/help` },
+      { source: "/help/:path*", destination: `https://chatbase.co/${agentId}/help/:path*` },
+      { source: "/__cb/:path*", destination: "https://chatbase.co/__cb/:path*" },
+      { source: `/api/chat/${agentId}/:path*`, destination: `https://chatbase.co/api/chat/${agentId}/:path*` },
+    ];
+  },
+};
+
 export default nextConfig;
