@@ -1,1 +1,0 @@
-﻿{"routes":[{"src":"/__cb/(.*)","dest":"https://www.chatbase.co/__cb/$1"},{"src":"/api/chat/AC8_WXwytVVhOpedaxdEH/(.*)","dest":"https://www.chatbase.co/api/chat/AC8_WXwytVVhOpedaxdEH/$1"},{"src":"/(.*)","dest":"https://www.chatbase.co/help/AC8_WXwytVVhOpedaxdEH"}]}
