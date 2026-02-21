@@ -1,15 +1,14 @@
-﻿/** @type {import("next").NextConfig} */
-const agentId = "AC8_WXwytVVhOpedaxdEH";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
+  async redirects() {
     return [
-      { source: "/help", destination: `https://chatbase.co/${agentId}/help` },
-      { source: "/help/:path*", destination: `https://chatbase.co/${agentId}/help/:path*` },
-      { source: "/__cb/:path*", destination: "https://chatbase.co/__cb/:path*" },
-      { source: `/api/chat/${agentId}/:path*`, destination: `https://chatbase.co/api/chat/${agentId}/:path*` },
-    ];
+      {
+        source: '/:path*',
+        destination: 'https://www.chatbase.co/help/AC8_WXwytVVhOpedaxdEH',
+        permanent: false,
+      },
+    ]
   },
-};
+}
 
 export default nextConfig;
