@@ -1,19 +1,17 @@
 ﻿/** @type {import("next").NextConfig} */
 const nextConfig = {
   async rewrites() {
-    const agentId = "AC8_WXwytVVhOpedaxdEH";
-
     return [
-      // Help center
-      { source: "/help/:path*", destination: `https://www.chatbase.co/help/${agentId}/:path*` },
+      // Help center (mantiene el mismo path)
+      { source: "/help/:path*", destination: "https://www.chatbase.co/help/:path*" },
 
       // Static assets
       { source: "/__cb/:path*", destination: "https://www.chatbase.co/__cb/:path*" },
 
-      // Chat API
-      { source: `/api/chat/${agentId}/:path*`, destination: `https://www.chatbase.co/api/chat/${agentId}/:path*` },
+      // Chat API (si la help page lo usa)
+      { source: "/api/chat/:path*", destination: "https://www.chatbase.co/api/chat/:path*" },
 
-      // Auth (evita loop de /auth/signin)
+      // Auth (evita loops)
       { source: "/auth/:path*", destination: "https://www.chatbase.co/auth/:path*" },
     ];
   },
