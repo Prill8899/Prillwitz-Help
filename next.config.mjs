@@ -1,20 +1,12 @@
-﻿/** @type {import("next").NextConfig} */
+﻿/** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
-      // Help center (mantiene el mismo path)
-      { source: "/help/:path*", destination: "https://www.chatbase.co/help/:path*" },
-
-      // Static assets
-      { source: "/__cb/:path*", destination: "https://www.chatbase.co/__cb/:path*" },
-
-      // Chat API (si la help page lo usa)
-      { source: "/api/chat/:path*", destination: "https://www.chatbase.co/api/chat/:path*" },
-
-      // Auth (evita loops)
-      { source: "/auth/:path*", destination: "https://www.chatbase.co/auth/:path*" },
+      { source: "/help", destination: "https://chatbase.co/AC8_WXwytVVhOpedaxdEH/help" },
+      { source: "/help/:path*", destination: "https://chatbase.co/AC8_WXwytVVhOpedaxdEH/help/:path*" },
+      { source: "/__cb/:path*", destination: "https://chatbase.co/__cb/:path*" },
+      { source: "/api/chat/AC8_WXwytVVhOpedaxdEH/:path*", destination: "https://chatbase.co/api/chat/AC8_WXwytVVhOpedaxdEH/:path*" },
     ];
   },
 };
-
 export default nextConfig;

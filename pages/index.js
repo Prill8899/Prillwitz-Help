@@ -1,12 +1,6 @@
 ﻿export async function getServerSideProps() {
   return {
-    redirect: {
-      destination: "/help/AC8_WXwytVVhOpedaxdEH",
-      permanent: false,
-    },
+    redirect: { destination: "/help", permanent: false },
   };
 }
-
-export default function Home() {
-  return null;
-}
+export default function Home() { return null; }
