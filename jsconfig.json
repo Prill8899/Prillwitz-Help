@@ -1,7 +1,9 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.chatbase.co/AC8_WXwytVVhQpedaxdEH/help",
+      "permanent": true
     }
-  }
+  ]
 }
